@@ -58,6 +58,7 @@ class MainMenu {
     MainMenu();
 
     void MenuManager();
+    void SwitchMenu();
 };
 
 #endif
