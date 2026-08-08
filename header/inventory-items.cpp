@@ -6,6 +6,7 @@
 Potion::Potion(std::string nameItem, int price, int Heal)
     : Items(nameItem, price), Heal(Heal) {}
 
+// Destructor
 Items::~Items() {
 
 }
@@ -15,6 +16,7 @@ void Potion::DisplayHealInfo() {
     std::cout << std::endl;
 }
 
+// Constructor kelas Database
 Database::Database() {
 }
 

@@ -53,4 +53,11 @@ class Database {
     }
 };
 
+class MainMenu {
+    public:
+    MainMenu();
+
+    void MenuManager();
+};
+
 #endif
