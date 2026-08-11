@@ -32,8 +32,7 @@ void MainMenu::SwitchMenu() {
             int valueSwitch = stoi(mySwitch);
             switch(valueSwitch) {
                 case 1:{
-                std::cout << "\nStill In Development! Coming Soon\n";
-                std::cout << std::endl;
+                SubSwitchMenu();
                 break;
                 }
 
@@ -45,18 +44,19 @@ void MainMenu::SwitchMenu() {
 
                 case 3:{
                 std::cout << "\nThank you for using the Simulator. Exiting";
+                std::cout << std::endl;
                 return;
                 }
 
                 default:
-                throw std::out_of_range("Your number is out of Range!");
+                throw std::out_of_range("Your number is out of Range!\n");
             }
         }
         catch(std::invalid_argument& e) {
-            std::cout << "[ERROR] " << e.what();
+            std::cout << "\n[ERROR] " << e.what();
         }
         catch(std::out_of_range& e) {
-            std::cout << "[ERROR] " << e.what();
+            std::cout << "\n[ERROR] " << e.what();
         }
-    } 
+    }
 }

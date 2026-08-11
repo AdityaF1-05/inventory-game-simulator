@@ -11,7 +11,6 @@ int main() {
     MainMenu mgr;
 
     mgr.SwitchMenu();
-    cout << endl;
 
     return 0;
 }

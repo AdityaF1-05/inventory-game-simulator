@@ -18,9 +18,6 @@ class Items {
     int getPrice() {
         return price;
     }
-    void setPrice(int p);
-
-    void ItemInfo();
 
     // Destructor
     virtual ~Items();
@@ -59,6 +56,9 @@ class MainMenu {
 
     void MenuManager();
     void SwitchMenu();
+
+    void SubMenuItems();
+    void SubSwitchMenu();
 };
 
 #endif
