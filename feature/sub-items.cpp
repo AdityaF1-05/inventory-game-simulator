@@ -30,11 +30,78 @@ void MainMenu::SubSwitchMenu() {
             int SubMenu = std::stoi(mySubSwitch);
             switch (SubMenu)
             {
-            case 1:
-                std::cout << "\nStill in Development! In Progress!";
-                std::cout << std::endl;
-                break;
-            
+            case 1: 
+                {
+                    std::string myItemName, myItemsPrice, myItemsHeals;
+                    int ItemPrice, HealEffects;
+
+                    bool isInputName = true;
+                    while (isInputName) {
+                        try {
+                            std::cout << "\nInput the Item Name : ";
+                            std::getline(std::cin, myItemName);
+
+                            if (myItemName.empty()) {
+                                throw std::invalid_argument("Your Input is Empty\n");
+                            }
+                            isInputName = false;
+                        }
+                        catch(...) {
+                            std::cout << "\nIncorrect Input type! Try Again!";
+                        }
+                    }
+
+                    bool isInputPrice = true;
+                    while (isInputPrice) {
+                        try {
+                            std::cout << "\nInput the Item Price ($): ";
+                            std::getline(std::cin, myItemsPrice);
+
+                            if (myItemsPrice.empty()) {
+                                throw std::invalid_argument("Your Input is Empty\n");
+                            }
+                            ItemPrice = std::stoi(myItemsPrice);
+
+                            if (ItemPrice <= 0 ) {
+                                throw std::invalid_argument("The Price is Invalid value!\n");
+                            }
+
+                            isInputPrice = false;
+                        }
+                        catch(...) {
+                            std::cout << "\nIncorrect Input type! Try Again!";
+                        }
+                    }
+
+                    bool isInputHeal = true;
+                    while (isInputHeal) {
+                        try {
+                            std::cout << "\nInput Your Item Heals Effect for Potion (HP): ";
+                            std::getline(std::cin, myItemsHeals);
+
+                            if (myItemsHeals.empty()) {
+                                throw std::invalid_argument("Value Items Effect is Empty!\n");
+                            }
+                            HealEffects = std::stoi(myItemsHeals);
+
+                            if (HealEffects <= 0) {
+                                throw std::invalid_argument("The Value of Healing Effect is Invalid!\n");
+                            }
+
+                            isInputHeal = false;
+                        }
+                        catch (...) {
+                            std::cout << "\nIncorrect Input Type! Try Again!";
+                        }
+                    }
+
+                    Database dbm;
+                    dbm.DataItems(myItemName, ItemPrice, HealEffects);
+                    std::cout << "\n[SUCCESS] " << myItemName << " Has Been Stored!";
+                    std::cout << std::endl;
+
+                    break;
+                }
             case 2:
                 std::cout << "\nStill in Development! In Progress!";
                 std::cout << std::endl;

@@ -29,10 +29,23 @@ class Potion : public Items {
 
     public:
     Potion(std::string itemName, int price, int Heal);
-    int getHeal() {
+
+    int getHeal() const {
         return Heal;
     }
     void DisplayHealInfo();
+
+    void setItemName(std::string it) {
+        Items::itemName = it;
+    }
+
+    void setPrice(int p) {
+        Items::price = p;
+    }
+
+    void setHeal(int h) {
+        Heal = h;
+    }
 };
 
 class Database {
@@ -45,7 +58,7 @@ class Database {
     void DataItems(std::string itemName, int price, int heal);
     
     std::vector<Potion>& getpotionItem();
-    int getSizePotion() {
+    int getSizePotion() const {
         return potionItem.size();
     }
 };
