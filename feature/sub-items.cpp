@@ -1,5 +1,6 @@
 #include <string>
 #include <iostream>
+#include <iomanip>
 #include "../header/inventory-items.hpp"
 
 void MainMenu::SubMenuItems() {
@@ -15,6 +16,7 @@ void MainMenu::SubMenuItems() {
 void MainMenu::SubSwitchMenu() {
     bool isSubMenu = true;
     std::string mySubSwitch;
+    Database dbm;
 
     while (isSubMenu) {
         try {
@@ -95,17 +97,44 @@ void MainMenu::SubSwitchMenu() {
                         }
                     }
 
-                    Database dbm;
                     dbm.DataItems(myItemName, ItemPrice, HealEffects);
                     std::cout << "\n[SUCCESS] " << myItemName << " Has Been Stored!";
                     std::cout << std::endl;
 
                     break;
                 }
-            case 2:
-                std::cout << "\nStill in Development! In Progress!";
-                std::cout << std::endl;
-                break;
+            case 2: {
+                    std::cout << "\n\nCounted Items in your Inventory : " << dbm.getSizePotion();
+                    std::vector<Potion> potionItem = dbm.getpotionItem();
+
+                    std::cout << "\n\n============= ITEMS =============\n";
+                    std::cout << std::left;
+
+                    if (potionItem.empty()) {
+                        std::cout << "\nNo Items in your Inventory!";
+                        std::cout << std::endl;
+                    } else {
+                        std::cout << std::setw(20);
+                        std::cout << "Items" << " | ";
+                        std::cout << std::setw(20);
+                        std::cout << "Price" << " | ";
+                        std::cout << std::setw(10);
+                        std::cout << "Effects" << std::endl;
+
+                        for (size_t i = 0; i < potionItem.size(); i++) {
+                            std::cout << std::endl;
+                            std::cout << std::setw(20);
+                            std::cout << potionItem[i].getItemName() << " | ";
+                            std::cout << std::setw(20);
+                            std::cout << potionItem[i].getPrice() << " | ";
+                            std::cout << std::setw(10);
+                            std::cout << potionItem[i].getHeal();
+
+                            std::cout << "\n=================================\n";
+                        }
+                    }
+                    break;
+                }
             case 3:
                 std::cout << "\nBack to main menu.";
                 std::cout << std::endl;
