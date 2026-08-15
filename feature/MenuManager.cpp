@@ -12,7 +12,7 @@ void MainMenu::MenuManager() {
 
     std::cout << std::endl;
     std::cout << "1. Take a Items\n";
-    std::cout << "2. Check my Inventory\n";
+    std::cout << "2. Check All Inventory\n";
     std::cout << "3. End of Simulation\n";
 }
 

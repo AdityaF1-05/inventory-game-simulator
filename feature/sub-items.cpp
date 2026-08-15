@@ -4,6 +4,7 @@
 #include "../header/inventory-items.hpp"
 
 void MainMenu::SubMenuItems() {
+    std::cout << std::endl << std::endl;
     std::cout << "+=======+" << std::endl;
     std::cout << "| ITEMS |" << std::endl;
     std::cout << "+=======+" << std::endl;
@@ -107,7 +108,7 @@ void MainMenu::SubSwitchMenu() {
                     std::cout << "\n\nCounted Items in your Inventory : " << dbm.getSizePotion();
                     std::vector<Potion> potionItem = dbm.getpotionItem();
 
-                    std::cout << "\n\n============= ITEMS =============\n";
+                    std::cout << "\n\n====================== ITEMS ======================\n";
                     std::cout << std::left;
 
                     if (potionItem.empty()) {
@@ -116,21 +117,21 @@ void MainMenu::SubSwitchMenu() {
                     } else {
                         std::cout << std::setw(20);
                         std::cout << "Items" << " | ";
-                        std::cout << std::setw(20);
+                        std::cout << std::setw(12);
                         std::cout << "Price" << " | ";
                         std::cout << std::setw(10);
-                        std::cout << "Effects" << std::endl;
+                        std::cout << "Effects (HP+)" << std::endl;
 
                         for (size_t i = 0; i < potionItem.size(); i++) {
                             std::cout << std::endl;
                             std::cout << std::setw(20);
                             std::cout << potionItem[i].getItemName() << " | ";
-                            std::cout << std::setw(20);
+                            std::cout << std::setw(12);
                             std::cout << potionItem[i].getPrice() << " | ";
                             std::cout << std::setw(10);
                             std::cout << potionItem[i].getHeal();
 
-                            std::cout << "\n=================================\n";
+                            std::cout << "\n===================================================";
                         }
                     }
                     break;
