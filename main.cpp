@@ -9,6 +9,7 @@ int main() {
     // Class Database dan Objek
     Database db;
     MainMenu mgr;
+    std::vector<Potion> getPotionItem;
 
     mgr.SwitchMenu();
 

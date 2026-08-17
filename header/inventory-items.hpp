@@ -4,6 +4,7 @@
 #include <vector>
 
 class Items {
+
     protected:  // Akses untuk Child dan Parent Class
     std::string itemName;
     int price;
@@ -64,11 +65,15 @@ class Database {
 };
 
 class MainMenu {
+    private:
+    Database dbm;
+
     public:
     MainMenu();
 
     void MenuManager();
     void SwitchMenu();
+    void InfoMenu();
 
     void SubMenuItems();
     void SubSwitchMenu();

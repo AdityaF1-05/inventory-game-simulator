@@ -17,7 +17,6 @@ void MainMenu::SubMenuItems() {
 void MainMenu::SubSwitchMenu() {
     bool isSubMenu = true;
     std::string mySubSwitch;
-    Database dbm;
 
     while (isSubMenu) {
         try {

@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <iomanip>
 #include "../header/inventory-items.hpp"
 
 MainMenu::MainMenu() {
@@ -12,8 +13,23 @@ void MainMenu::MenuManager() {
 
     std::cout << std::endl;
     std::cout << "1. Take a Items\n";
-    std::cout << "2. Check All Inventory\n";
+    std::cout << "2. Program Info\n";
     std::cout << "3. End of Simulation\n";
+}
+
+void MainMenu::InfoMenu() {
+    std::cout << std::left;
+
+    std::cout << std::endl;
+    std::cout << "+========================+\n";
+    std::cout << "|          INFO          |\n";
+    std::cout << "+========================+\n";
+    std::cout << std::endl;
+
+    std::cout << "Welcome to Inventory Simulator Program!\n"
+              << "This Program run on Console PC/Laptop simulatenaly.\n"
+              << "Use VS Code or Other Compiler Program for newer version of C++ (C++ 17).\n\n"
+              << "Program Version v0.7.1 - In Development\n" << std::endl;
 }
 
 void MainMenu::SwitchMenu() {
@@ -37,7 +53,7 @@ void MainMenu::SwitchMenu() {
                 }
 
                 case 2:{
-                std::cout << "\nStill In Development! Coming Soon\n";
+                InfoMenu();
                 std::cout << std::endl;
                 break;
                 }
